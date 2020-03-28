@@ -1,0 +1,24 @@
+body{
+    background-image: url(/assets/images/brba.jpg);
+}
+
+.title {
+    color: white;
+}
+
+#question{
+    color: yellowgreen;
+}
+
+#opt1 {
+    color: whitesmoke;
+}
+#opt2 {
+    color: whitesmoke;
+}
+#opt3 {
+    color: whitesmoke;
+}
+#opt4 {
+    color: whitesmoke;
+}
