@@ -1,9 +1,11 @@
 body{
+    
     background-image: url(/assets/images/brba.jpg);
 }
 
 .title {
     color: white;
+    text-align: center;
 }
 
 #question{
@@ -12,13 +14,29 @@ body{
 
 #opt1 {
     color: whitesmoke;
+    margin: 15px, 15px;
+    padding: 15px 15px;
+    text-align: center;
 }
 #opt2 {
     color: whitesmoke;
+    margin: 15px, 15px;
+    padding: 15px 15px;
+    text-align: center;
 }
 #opt3 {
     color: whitesmoke;
+    margin: 15px, 15px;
+    padding: 15px 15px;
+    text-align: center;
 }
 #opt4 {
     color: whitesmoke;
+    margin: 15px, 15px;
+    padding: 15px 15px;
+    text-align: center;
 }
+#timer{
+    color: white;
+    text-align: right;
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
