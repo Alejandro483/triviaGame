@@ -1,5 +1,4 @@
 body{
-    
     background-image: url(/assets/images/brba.jpg);
 }
 
@@ -9,7 +8,9 @@ body{
 }
 
 #question{
-    color: yellowgreen;
+    color: greenyellow;
+    margin: 10px;
+    
 }
 
 #opt1 {
@@ -36,7 +37,9 @@ body{
     padding: 15px 15px;
     text-align: center;
 }
-#timer{
+#time{
     color: white;
-    text-align: right;
-    font-family: Verdana, Geneva, Tahoma, sans-serif;
+    font-size: x-large;
+    text-align: center;
+    
+}
