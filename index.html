@@ -5,71 +5,34 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>TriviaGame</title>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
-    <link rel="stylesheet" href="/assets/css/style.css">
-    <link href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css" rel="stylesheet"
-        integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
+    <!-- <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script> -->
+    <!-- <link rel="stylesheet" href="/assets/css/style.css"> -->
+    <!-- <link href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous"> -->
 
 </head>
 
 <body>
-    <header>
-        <h1 class="title">Trivia Game</h1>
-    </header>
+    <div id="container">
+        <div id="start">Start Trivia!</div>
+        <button id="submit">Let's Trivia</button>
+        <div id="question"></div>
+        <div id="choices">
+            <div class="choice" id="A" onclick="checkAnswer('A')"></div>
+            <div class="choice" id="B" onclick="checkAnswer('B')"></div>
+            <div class="choice" id="C" onclick="checkAnswer('C')"></div>
+        </div>
+        <div id="timer">
+            <div id="counter"></div>
+            <div id="btimeGauge"></div>
+            <div id="timeGauge"></div>
+        </div>
+        <div id="progress"></div>
+    </div>
+    <div id="scoreContainer" style="display: none"></div>
+    </div>
 
-    <div class="container">
-        <h2 id="question">1 Which song best describes the style of Saul Goodman’s office?</h2>
-    </div>
-    <div>
-        <span id="opt1">Paradise City</span>
-        <span id="opt2">Home on the Range</span>
-        <span id="opt3">America the Beautiful</span>
-        <span id="opt4">Panama</span>
-        <span id="ans">America the Beautiful</span>
-    </div>
-    <div class="container">
-        <h2 id="question">2 Walt’s pre-Heisenberg vehicle, the one he runs over the gangsters in, is a…</h2>
-    </div>
-    <div>
-        <span id="opt1">Chevy Citation</span>
-        <span id="opt2">Nissan Cube</span>
-        <span id="opt3">Ford Explorer</span>
-        <span id="opt4">Pontiac Aztec</span>
-        <span id="ans">Pontiac Aztec</span>
-    </div>
-    <div class="container">
-        <h2 id="question">3 When Walt retired from the meth game, how much money did he walk away with?</h2>
-    </div>
-    <div>
-        <span id="opt1">$ 4 million</span>
-        <span id="opt2">$40 million</span>
-        <span id="opt3">8 million</span>
-        <span id="opt4">80 million</span>
-        <span id="ans">80 million</span>
-    </div>
-    <div class="container">
-        <h2 id="question">4 Where is Gus Fring from?</h2>
-    </div>
-    <div>
-        <span id="opt1">Argentina</span>
-        <span id="opt2">Chile</span>
-        <span id="opt3">Italy</span>
-        <span id="opt4">Germany</span>
-        <span id="ans">Chile</span>
-    </div>
-    <div class="container">
-        <h2 id="question">5 Saul’s birth name was…</h2>
-    </div>
-    <div>
-        <span id="opt1">Jimmy McGill</span>
-        <span id="opt2">Jimmy McCormick</span>
-        <span id="opt3">JImmy McKay</span>
-        <span id="opt4">JImmy McGull</span>
-        <span id="ans">Jimmy McGill</span>
-    </div>
-    <div id="time"></div>
 
-    <audio src="/assets/images/theme.mp3" type="audio/mp3"></audio>
 </body>
 <script src="/assets/javaScript/app.js"></script>
 
