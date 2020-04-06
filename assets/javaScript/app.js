@@ -51,10 +51,18 @@ $(document).ready(function () {
     ];
 
     // variables
-
+    function choiceListeners() {
+        $(".choice").on("click", function () {
+            var answer = $(this).attr("id")
+            var correct = $("#question").attr("data-correct")
+            console.log(answer)
+            console.log(correct)
+        })
+    }
     const lastQuestion = questions.length - 1;
     let ques = 0;
     let count = 0;
+    let questionTime = 30;
     let TIMER;
     let score = 0;
 
@@ -62,6 +70,7 @@ $(document).ready(function () {
     function nextQuest() {
         let q = questions[ques];
 
+        question.setAttribute("data-correct", q.correct)
         question.innerHTML = "<p>" + q.question + "</p>";
         choiceA.innerHTML = q.choiceA;
         choiceB.innerHTML = q.choiceB;
@@ -72,10 +81,12 @@ $(document).ready(function () {
     start.addEventListener("click", startQuiz);
 
     function startQuiz() {
+        console.log('started')
         nextQuest();
         Progress();
         Counter();
-        TIMER = setInterval(renderCounter, 1000); // 1000ms = 1s
+        choiceListeners();
+        TIMER = setInterval(Counter, 1000); // 1000ms = 1s
     }
 
     //  progress
@@ -93,14 +104,13 @@ $(document).ready(function () {
             count++
         } else {
             count = 0;
-
-
         }
     }
 
     // checkAnswer
 
     function checkAnswer(answer) {
+        console.log("check")
         if (answer == questions[quest].correct) {
             score++;
 
