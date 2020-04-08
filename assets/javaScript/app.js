@@ -55,9 +55,11 @@ $(document).ready(function () {
         $(".choice").on("click", function () {
             var answer = $(this).attr("id")
             var correct = $("#question").attr("data-correct")
+
             console.log(answer)
             console.log(correct)
         })
+
     }
     const lastQuestion = questions.length - 1;
     let ques = 0;
@@ -65,17 +67,20 @@ $(document).ready(function () {
     let questionTime = 30;
     let TIMER;
     let score = 0;
+    let answer = choiceListeners;
+
 
     // render a question
-    function nextQuest() {
-        let q = questions[ques];
 
+    function nextQuest() {
+        var q = questions[ques];
         question.setAttribute("data-correct", q.correct)
         question.innerHTML = "<p>" + q.question + "</p>";
         choiceA.innerHTML = q.choiceA;
         choiceB.innerHTML = q.choiceB;
         choiceC.innerHTML = q.choiceC;
     }
+
 
     // begin
     start.addEventListener("click", startQuiz);
@@ -108,10 +113,9 @@ $(document).ready(function () {
     }
 
     // checkAnswer
+    function checkAnswer() {
 
-    function checkAnswer(answer) {
-        console.log("check")
-        if (answer == questions[quest].correct) {
+        if (answer == questions[ques].correct) {
             score++;
 
             answerIsCorrect();
@@ -120,16 +124,17 @@ $(document).ready(function () {
             answerIsWrong();
         }
         count = 0;
-        if (quest < lastQuestion) {
-            quest++;
+        if (ques < lastQuestion) {
+            ques++;
             nextQuest();
         } else {
             // end the quiz and show the score
             clearInterval(TIMER);
             scores();
         }
+        console.log(checkAnswer)
     }
-
+    checkAnswer()
     // answer is correct
     function answerIsCorrect() {
 
@@ -139,7 +144,7 @@ $(document).ready(function () {
     // answer is Wrong
     function answerIsWrong() {
 
-        document.getElementById(quest);
+        document.getElementById(ques);
     }
 
     // score render
