@@ -51,29 +51,31 @@ $(document).ready(function () {
     ];
 
     // variables
-    function choiceListeners() {
-        $(".choice").on("click", function () {
-            var answer = $(this).attr("id")
-            var correct = $("#question").attr("data-correct")
+    // function choiceListeners() {
+    $(".choice").on("click", function () {
+        var answer = $(this).attr("id")
+        var correct = $("#question").attr("data-correct")
 
-            console.log(answer)
-            console.log(correct)
-        })
+        console.log(answer)
+        console.log(correct)
+        checkAnswer(answer)
+    })
 
-    }
+    // }
     const lastQuestion = questions.length - 1;
     let ques = 0;
     let count = 0;
     let questionTime = 30;
     let TIMER;
     let score = 0;
-    let answer = choiceListeners;
+    // let answer = choiceListeners;
 
 
     // render a question
 
     function nextQuest() {
         var q = questions[ques];
+        console.log(ques)
         question.setAttribute("data-correct", q.correct)
         question.innerHTML = "<p>" + q.question + "</p>";
         choiceA.innerHTML = q.choiceA;
@@ -86,11 +88,15 @@ $(document).ready(function () {
     start.addEventListener("click", startQuiz);
 
     function startQuiz() {
+        $("#submit").hide();
+        $("#scoreContainer").empty();
+        score = 0;
+        ques = 0;
         console.log('started')
         nextQuest();
         Progress();
-        Counter();
-        choiceListeners();
+        // Counter();
+        // choiceListeners();
         TIMER = setInterval(Counter, 1000); // 1000ms = 1s
     }
 
@@ -113,7 +119,7 @@ $(document).ready(function () {
     }
 
     // checkAnswer
-    function checkAnswer() {
+    function checkAnswer(answer) {
 
         if (answer == questions[ques].correct) {
             score++;
@@ -129,16 +135,17 @@ $(document).ready(function () {
             nextQuest();
         } else {
             // end the quiz and show the score
+            $("#submit").show();
             clearInterval(TIMER);
             scores();
         }
         console.log(checkAnswer)
     }
-    checkAnswer()
+    // checkAnswer()
     // answer is correct
     function answerIsCorrect() {
 
-        document.getElementById(quest);
+        document.getElementById(ques);
     }
 
     // answer is Wrong
@@ -150,7 +157,7 @@ $(document).ready(function () {
     // score render
     function scores() {
         scoreDiv.style.display = "block";
-
+        scoreDiv.style.color = "white";
         // calculate the amount of question percent answered by the user
         const scorePerCent = Math.round(100 * score / questions.length);
 
